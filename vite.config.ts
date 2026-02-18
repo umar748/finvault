@@ -5,6 +5,9 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // `base` controls the base public path when served in production.
+  // It can be overridden via the Vite environment variable `VITE_BASE`.
+  base: process.env.VITE_BASE || "/",
   server: {
     host: "::",
     port: 8080,
